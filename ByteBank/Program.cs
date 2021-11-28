@@ -18,6 +18,7 @@ namespace ByteBank
             contaDaAna.conta = 23232122;
 
             contaDaAline.Sacar(100);
+            contaDaAna.Depositar(300);
 
             Console.WriteLine(contaDaAline.titular);
             Console.WriteLine(contaDaAline.agencia);
