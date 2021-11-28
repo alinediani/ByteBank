@@ -21,5 +21,18 @@
     {
         this.saldo += valor;
     }
+    public bool Transferir(double valor, ContaCorrente contaDestino)
+    {
+        if (this.saldo < valor)
+        {
+            return false;
+        }
+        else
+        {
+            contaDestino.saldo += valor;
+            this.saldo -= valor;
+            return true;
+        }
+    }
 }
     
