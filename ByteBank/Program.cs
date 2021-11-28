@@ -20,6 +20,7 @@ namespace ByteBank
             contaDaAline.Sacar(100);
             contaDaAna.Depositar(300);
             contaDaAline.Transferir(500, contaDaAna);
+            contaDaAna.Transferir(6, contaDaAline);
 
             Console.WriteLine(contaDaAline.titular);
             Console.WriteLine(contaDaAline.agencia);
