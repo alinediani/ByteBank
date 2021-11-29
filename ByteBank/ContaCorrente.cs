@@ -8,6 +8,38 @@
         public int conta;
         private double _saldo = 100;
 
+        public ContaCorrente(int agencia,int conta)
+        {
+            Agencia = agencia;
+            Conta = conta;
+            ContaCorrente.TotalContasCriadas++;
+        }
+
+        public static int TotalContasCriadas { get; private set; }
+
+
+        public int Conta
+        {
+            get
+            {
+                return conta;
+            }
+            set
+            {
+                conta = value;
+            }
+        }
+        public int Agencia
+        {
+            get
+            {
+                return agencia;
+            }
+            set
+            {
+                agencia = value;
+            }
+        }
         public double Saldo
         {
             get

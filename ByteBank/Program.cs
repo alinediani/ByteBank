@@ -7,8 +7,10 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaDaAline = new ContaCorrente();
+            ContaCorrente contaDaAline = new ContaCorrente(123, 312313123);
             Cliente clienteAline = new Cliente();
+
+          
 
             contaDaAline.Saldo=1000;
             clienteAline.nome = "Aline";
@@ -17,10 +19,8 @@ namespace ByteBank
             clienteAline.profissao = "Desenvolvedora";
 
             contaDaAline.titular = clienteAline;
-            contaDaAline.agencia = 123;
-            contaDaAline.conta = 23232121;
 
-            ContaCorrente contaDaAna = new ContaCorrente();
+            ContaCorrente contaDaAna = new ContaCorrente(123, 343241213);
             Cliente clienteAna = new Cliente();
             clienteAna.nome = "Ana";
             clienteAna.cpf = "987654321";
@@ -28,8 +28,6 @@ namespace ByteBank
             clienteAna.profissao = "Tradutora";
 
             contaDaAna.titular = clienteAna;
-            contaDaAna.agencia = 123;
-            contaDaAna.conta = 23232122;
 
             contaDaAline.Saldo+=1000;
             contaDaAline.Sacar(100);
@@ -47,6 +45,8 @@ namespace ByteBank
             Console.WriteLine(contaDaAna.agencia);
             Console.WriteLine(contaDaAna.conta);
             Console.WriteLine(contaDaAna.Saldo);
+
+            Console.WriteLine(ContaCorrente.TotalContasCriadas);
 
         }
     }
