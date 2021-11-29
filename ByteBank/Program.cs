@@ -10,7 +10,7 @@ namespace ByteBank
             ContaCorrente contaDaAline = new ContaCorrente();
             Cliente clienteAline = new Cliente();
 
-            contaDaAline.ObterSaldo();
+            contaDaAline.Saldo=1000;
             clienteAline.nome = "Aline";
             clienteAline.cpf = "123456789";
             clienteAline.idade = 22;
@@ -31,7 +31,7 @@ namespace ByteBank
             contaDaAna.agencia = 123;
             contaDaAna.conta = 23232122;
 
-            contaDaAline.DefinirSaldo(1000);
+            contaDaAline.Saldo+=1000;
             contaDaAline.Sacar(100);
             contaDaAna.Depositar(300);
             contaDaAline.Transferir(500, contaDaAna);
@@ -41,12 +41,12 @@ namespace ByteBank
             Console.WriteLine(contaDaAline.titular.nome);
             Console.WriteLine(contaDaAline.agencia);
             Console.WriteLine(contaDaAline.conta);
-            Console.WriteLine(contaDaAline.ObterSaldo());
+            Console.WriteLine(contaDaAline.Saldo);
 
             Console.WriteLine(contaDaAna.titular.nome);
             Console.WriteLine(contaDaAna.agencia);
             Console.WriteLine(contaDaAna.conta);
-            Console.WriteLine(contaDaAna.ObterSaldo());
+            Console.WriteLine(contaDaAna.Saldo);
 
         }
     }
