@@ -9,7 +9,7 @@ namespace ByteBank
         {
             ContaCorrente contaDaAline = new ContaCorrente(123, 312313123);
             Cliente clienteAline = new Cliente();
-
+            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
           
 
             contaDaAline.Saldo=1000;
@@ -48,6 +48,19 @@ namespace ByteBank
 
             Console.WriteLine(ContaCorrente.TotalContasCriadas);
 
+            Funcionario edison = new Funcionario(0);
+            edison.Nome = "Edison";
+            edison.CPF = "3231432454656";
+            edison.Salario = 8000;
+            gerenciador.Registrar(edison);
+
+            Diretor juliana = new Diretor(1);
+            juliana.Nome = "Juliana";
+            juliana.CPF = "3232321";
+            juliana.Salario = 15000;
+            gerenciador.Registrar(juliana);
+
+            Console.WriteLine("Total de bonificacoes: " + gerenciador.GetTotalBonificacao());
         }
     }
 }
