@@ -12,8 +12,8 @@ namespace ByteBank
             ContaCorrente contaDaAna = new ContaCorrente(123, 343241213);
             Cliente clienteAna = new Cliente();
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-            Funcionario edison = new Funcionario();
-            Diretor juliana = new Diretor();
+            Funcionario edison = new Funcionario("1233131");
+            Diretor juliana = new Diretor("45254523");
 
 
             contaDaAline.Saldo=1000;
@@ -58,6 +58,7 @@ namespace ByteBank
             Console.WriteLine(contaDaAna.Saldo);
 
             Console.WriteLine(ContaCorrente.TotalContasCriadas);
+            Console.WriteLine(Funcionario.TotalDeFuncionarios);
             Console.WriteLine("Total de bonificacoes: " + gerenciador.GetTotalBonificacao());
         }
     }
