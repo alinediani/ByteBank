@@ -12,8 +12,8 @@ namespace ByteBank
             ContaCorrente contaDaAna = new ContaCorrente(123, 343241213);
             Cliente clienteAna = new Cliente();
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-            Funcionario edison = new Funcionario("1233131");
-            Diretor juliana = new Diretor("45254523");
+            Funcionario edison = new Funcionario("1233131",5000);
+            Diretor juliana = new Diretor("45254523",3000);
 
 
             contaDaAline.Saldo=1000;
@@ -32,11 +32,11 @@ namespace ByteBank
 
             edison.Nome = "Edison";
             edison.CPF = "3231432454656";
-            edison.Salario = 8000;
 
             juliana.Nome = "Juliana";
             juliana.CPF = "3232321";
-            juliana.Salario = 15000;
+            juliana.AumentarSalario();
+            Console.WriteLine("Novo salário: " + juliana.Salario);
 
             contaDaAline.Saldo+=1000;
             contaDaAline.Sacar(100);
