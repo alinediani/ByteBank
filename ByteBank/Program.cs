@@ -12,7 +12,7 @@ namespace ByteBank
             ContaCorrente contaDaAna = new ContaCorrente(123, 343241213);
             Cliente clienteAna = new Cliente();
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-            Funcionario edison = new Funcionario("1233131",5000);
+            Designer edison = new Designer("1233131",5000);
             Diretor juliana = new Diretor("45254523",3000);
 
 
