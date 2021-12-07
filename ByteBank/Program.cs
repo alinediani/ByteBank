@@ -60,6 +60,30 @@ namespace ByteBank
             Console.WriteLine(ContaCorrente.TotalContasCriadas);
             Console.WriteLine(Funcionario.TotalDeFuncionarios);
             Console.WriteLine("Total de bonificacoes: " + gerenciador.GetTotalBonificacao());
+            CalcularBonificacao();
+        }
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Designer anajulia = new Designer("2213123", 4000);
+            anajulia.Nome = "Ana Julia";
+
+            Diretor alined = new Diretor("2213121", 14000);
+            alined.Nome = "Aline Diani";
+
+            Auxiliar bib = new Auxiliar("23424324", 1000);
+            bib.Nome = "Bib";
+
+            Gerente ju = new Gerente("24324234", 2000);
+            ju.Nome = " Ju";
+
+            gerenciadorBonificacao.Registrar(anajulia);
+            gerenciadorBonificacao.Registrar(alined);
+            gerenciadorBonificacao.Registrar(bib);
+            gerenciadorBonificacao.Registrar(ju);
+
+            Console.WriteLine("Total: " + gerenciadorBonificacao.GetTotalBonificacao()) ;
         }
     }
 }
