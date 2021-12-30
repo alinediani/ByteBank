@@ -35,7 +35,7 @@ namespace ByteBank
 
             juliana.Nome = "Juliana";
             juliana.CPF = "3232321";
-            juliana.AumentarSalario();
+            juliana.GetAumento();
             Console.WriteLine("Novo salário: " + juliana.Salario);
 
             contaDaAline.Saldo+=1000;
