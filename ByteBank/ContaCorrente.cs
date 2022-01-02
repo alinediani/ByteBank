@@ -2,7 +2,7 @@
 {
     public class ContaCorrente
     {
-
+        public static double TaxaOperacao { get; private set; }
         public Cliente titular;
         public int agencia;
         public int conta;
@@ -13,6 +13,7 @@
             Agencia = agencia;
             Conta = conta;
             ContaCorrente.TotalContasCriadas++;
+            TaxaOperacao = 30 / TotalContasCriadas;
         }
 
         public static int TotalContasCriadas { get; private set; }

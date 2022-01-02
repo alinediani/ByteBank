@@ -7,6 +7,15 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
+            try
+            {
+                Metodo();
+            }
+            catch (NullReferenceException erro)
+            {
+                Console.WriteLine(erro.StackTrace);
+                Console.WriteLine("Aconteceu um erro");
+            }
             ContaCorrente contaDaAline = new ContaCorrente(123, 312313123);
             Cliente clienteAline = new Cliente();
             ContaCorrente contaDaAna = new ContaCorrente(123, 343241213);
@@ -84,6 +93,29 @@ namespace ByteBank
             gerenciadorBonificacao.Registrar(ju);
 
             Console.WriteLine("Total: " + gerenciadorBonificacao.GetTotalBonificacao()) ;
+        }
+        private static int Dividir (int numero, int divisor)
+        {
+           // ContaCorrente conta = null;
+           // Console.WriteLine(conta.Saldo);
+            return numero / divisor;
+        }
+        private static void Metodo()
+        {
+            TestaDivisao(0);
+        }
+        private static void TestaDivisao (int divisor)
+        {
+            try
+            {
+                int resultado = Dividir(10, divisor);
+                Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
+            }
+            catch(DivideByZeroException erro) 
+            {
+                Console.WriteLine(erro.Message);
+                Console.WriteLine("Não é possível fazer divisão por 0");
+            }
         }
     }
 }
