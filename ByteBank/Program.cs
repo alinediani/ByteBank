@@ -9,6 +9,15 @@ namespace ByteBank
         {
             try
             {
+                ContaCorrente contaCorrente = new ContaCorrente(0, 0);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Argumento com problema: " + ex.ParamName);
+                Console.WriteLine(ex.Message);
+            }
+            try
+            {
                 Metodo();
             }
             catch (DivideByZeroException e)
@@ -35,14 +44,14 @@ namespace ByteBank
             clienteAline.cpf = "123456789";
             clienteAline.idade = 22;
             clienteAline.profissao = "Desenvolvedora";
-            contaDaAline.titular = clienteAline;
+            contaDaAline.Titular = clienteAline;
 
             
             clienteAna.nome = "Ana";
             clienteAna.cpf = "987654321";
             clienteAna.idade = 16;
             clienteAna.profissao = "Tradutora";
-            contaDaAna.titular = clienteAna;
+            contaDaAna.Titular = clienteAna;
 
             edison.Nome = "Edison";
             edison.CPF = "3231432454656";
@@ -61,14 +70,14 @@ namespace ByteBank
             gerenciador.Registrar(juliana);
 
 
-            Console.WriteLine(contaDaAline.titular.nome);
-            Console.WriteLine(contaDaAline.agencia);
-            Console.WriteLine(contaDaAline.conta);
+            Console.WriteLine(contaDaAline.Titular.nome);
+            Console.WriteLine(contaDaAline.Agencia);
+            Console.WriteLine(contaDaAline.Conta);
             Console.WriteLine(contaDaAline.Saldo);
 
-            Console.WriteLine(contaDaAna.titular.nome);
-            Console.WriteLine(contaDaAna.agencia);
-            Console.WriteLine(contaDaAna.conta);
+            Console.WriteLine(contaDaAna.Titular.nome);
+            Console.WriteLine(contaDaAna.Agencia);
+            Console.WriteLine(contaDaAna.Conta);
             Console.WriteLine(contaDaAna.Saldo);
 
             Console.WriteLine(ContaCorrente.TotalContasCriadas);
