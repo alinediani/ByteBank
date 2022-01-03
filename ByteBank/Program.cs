@@ -9,6 +9,14 @@ namespace ByteBank
         {
             try
             {
+                CarregarContas();
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Catch no metodo main");
+            }
+            try
+            {
                 ContaCorrente contaCorrente = new ContaCorrente(0, 0);
             }
             catch (ArgumentException ex)
@@ -130,6 +138,13 @@ namespace ByteBank
                 throw;
             }
            
+        }
+        private static void CarregarContas()
+        {
+            using(LeitorDeArquivos leitor = new LeitorDeArquivos("teste.txt"))
+            {
+                leitor.LerProximaLinha();
+            }
         }
     }
 }
